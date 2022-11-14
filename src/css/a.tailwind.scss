@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ast-global-color-0: hsl(0deg 0% 0%);
+    --ast-global-color-4: hsl(0deg 0% 94%);
+    --ast-global-color-5: hsl(0deg 0% 100%);
+    --ast-global-color-7: hsl(0deg 0% 26%);
+  }
+}

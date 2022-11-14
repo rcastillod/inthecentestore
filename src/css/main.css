@@ -1,0 +1,63 @@
+/* -------------------------------------------------------------------------- */
+/*                                   GLOBAL                                   */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                   HEADER                                   */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENTS                                */
+/* -------------------------------------------------------------------------- */
+.social-list {
+  @apply ml-auto;
+}
+.social-list ul {
+  @apply flex gap-3;
+}
+.social-list ul li {
+  @apply rounded-full h-8 w-8 bg-secondary;
+}
+.social-list ul li > a {
+  @apply h-full w-full flex items-center justify-center rounded-full;
+}
+.social-list ul li > a:hover {
+  @apply text-white;
+}
+
+.hero .elementor-widget-wrap {
+  padding: 0 !important;
+}
+.hero .elementor-container,
+.hero .elementor-element,
+.hero .elementor-widget-container,
+.hero .elementor-shortcode {
+  @apply h-full;
+}
+
+.hero-slide__content {
+  padding-inline-start: clamp(2rem, 10vw, 30rem);
+}
+.hero-slide__content .hero-slide__link {
+  text-decoration: none !important;
+}
+
+.icon-list.elementor-widget .elementor-icon-list-item {
+  align-items: flex-start;
+}
+.icon-list.elementor-widget .elementor-icon-list-item .elementor-icon-list-icon {
+  margin-top: 0.3125rem;
+}
+
+.wpcf7-form input[type=text],
+.wpcf7-form input[type=tel],
+.wpcf7-form input[type=email] {
+  @apply rounded-lg;
+}
+.wpcf7-form .wpcf7-not-valid-tip {
+  @apply text-sm text-primary font-medium;
+}
+.wpcf7-form .wpcf7-response-output {
+  @apply m-0 text-sm text-white rounded-lg;
+  border: none !important;
+  margin: 0 !important;
+  padding-block: 0.3125rem;
+}

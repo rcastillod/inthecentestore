@@ -1,0 +1,193 @@
+/* -------------------------------------------------------------------------- */
+/*                                   GLOBAL                                   */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   HEADER                                   */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENTS                                */
+/* -------------------------------------------------------------------------- */
+
+// Social Media
+.social-list {
+  @apply ml-auto;
+
+  ul {
+    @apply flex gap-3;
+
+    li {
+      @apply rounded-full h-8 w-8 bg-secondary;
+
+      >a {
+        @apply h-full w-full flex items-center justify-center rounded-full;
+
+        &:hover {
+          @apply text-white
+        }
+      }
+    }
+  }
+
+}
+
+// Hero Slider
+.hero {
+
+  .elementor-widget-wrap {
+    padding: 0 !important;
+  }
+
+  .elementor-container,
+  .elementor-element,
+  .elementor-widget-container,
+  .elementor-shortcode {
+    @apply h-full;
+  }
+}
+
+.hero-slide__content {
+  padding-inline-start: clamp(2rem, 10vw, 30rem);
+
+  .hero-slide__link {
+    text-decoration: none !important;
+  }
+}
+
+//   .hero-slide__title {
+//     font-size: clamp(2rem, 3vw, 2.4rem);
+//     line-height: 1;
+//     transition-delay: 0.2s;
+
+//     strong {
+//       @apply text-primary;
+//     }
+//   }
+
+//   .hero-slide__excerpt {
+//     transition-delay: 0.3s;
+//   }
+
+//   .hero-slide__link {
+//     @apply font-bold;
+//     font-family: 'Mulish', sans-serif;
+//     line-height: 1;
+//   }
+
+// }
+
+// .hero-slide__image-bg img {
+//   @apply h-[1100px] w-[800px] object-cover rounded-[400px];
+// }
+
+// .hero-slide__image img {
+//   @apply rounded-2xl;
+//   width: 100%;
+// }
+
+// // Swiper Arrow
+// .hero-slide__arrow {
+//   @apply absolute right-8 bottom-5 z-10 items-center gap-4;
+
+//   svg {
+//     @apply w-7;
+//   }
+
+//   .swiper-button {
+//     @apply border rounded-full w-11 h-11 flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out;
+
+//     &:hover {
+//       @apply bg-primary text-white border-primary;
+
+//       svg {
+//         @apply stroke-white;
+//       }
+//     }
+//   }
+
+//   .swiper-prev-button {
+
+//     svg {
+//       transform: rotate(-180deg);
+//     }
+
+//   }
+// }
+
+// // Swiper Anmimation
+// .swiper-slide {
+//   opacity: 0 !important;
+//   transition: 0.4s;
+
+//   &-active {
+//     opacity: 1 !important;
+//   }
+// }
+
+// .swiper-slide .hero-slide__content>* {
+//   transform: translateY(-30px);
+//   opacity: 0;
+//   transition-duration: 0.8s;
+// }
+
+// .swiper-slide-active .hero-slide__content>* {
+//   transform: none;
+//   opacity: 1;
+// }
+
+// .swiper-slide .hero-slide__image-bg img {
+//   transition-duration: 0.6s;
+//   opacity: 0;
+//   object-position: 80%;
+// }
+
+// .swiper-slide-active .hero-slide__image-bg img {
+//   opacity: 1;
+//   transform: none;
+//   object-position: 50%;
+// }
+
+// .swiper-slide .hero-slide__image img {
+//   transition-duration: 0.8s;
+//   transform: scale(0.8);
+//   opacity: 0;
+// }
+
+// .swiper-slide-active .hero-slide__image img {
+//   opacity: 1;
+//   transform: scale(1);
+// }
+
+// Icon List
+.icon-list.elementor-widget .elementor-icon-list-item {
+  align-items: flex-start;
+
+  .elementor-icon-list-icon {
+    margin-top: .3125rem;
+  }
+}
+
+// Contact form
+.wpcf7-form {
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    @apply rounded-lg
+  }
+
+  // Error message alert
+  .wpcf7-not-valid-tip {
+    @apply text-sm text-primary font-medium
+  }
+
+  .wpcf7-response-output {
+    @apply m-0 text-sm text-white rounded-lg;
+    border: none !important;
+    margin: 0 !important;
+    padding-block: .3125rem;
+  }
+}
