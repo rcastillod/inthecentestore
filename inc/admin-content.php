@@ -22,10 +22,16 @@ if (function_exists('acf_add_options_page')) {
     'menu_title' => 'Información General',
     'parent_slug' => 'ajustes',
   ));
-  // 01.- Home Slider
+  // 02.- Home Slider
   acf_add_options_sub_page(array(
     'page_title' => 'Home Slider',
     'menu_title' => 'Home Slider',
+    'parent_slug' => 'ajustes',
+  ));
+  // 03.- Home Contenido
+  acf_add_options_sub_page(array(
+    'page_title' => 'Home Contenido',
+    'menu_title' => 'Home Contenido',
     'parent_slug' => 'ajustes',
   ));
 }

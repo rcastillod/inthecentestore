@@ -16,9 +16,10 @@ if (!defined('ABSPATH')) exit;
 // llamado a funciones en carpeta "inc"
 $file_includes = array(
 	'/enqueue.php',
-	// '/extras.php',
+	'/extras.php',
 	'/admin-content.php',
 	'/home-slider.php',
+	'/featured-home-product.php',
 );
 
 foreach ($file_includes as $file) {
