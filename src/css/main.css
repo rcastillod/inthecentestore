@@ -7,20 +7,23 @@
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENTS                                */
 /* -------------------------------------------------------------------------- */
-.social-list {
-  @apply ml-auto;
-}
 .social-list ul {
   @apply flex gap-3;
 }
 .social-list ul li {
-  @apply rounded-full h-8 w-8 bg-secondary;
+  @apply rounded-full h-9 w-9 bg-secondary;
+}
+.social-list ul li:hover {
+  @apply bg-primary;
 }
 .social-list ul li > a {
   @apply h-full w-full flex items-center justify-center rounded-full;
 }
 .social-list ul li > a:hover {
   @apply text-white;
+}
+.social-list ul li > a i {
+  @apply text-lg;
 }
 
 .hero .elementor-widget-wrap {

@@ -1,6 +1,6 @@
 <?php
 /* -------------------------------------------------------------------------- */
-/*                   Shortcode hero slide                                     */
+/*                   Featured home product                                    */
 /* -------------------------------------------------------------------------- */
 add_shortcode('featured-home-product', 'itc_featured_product_sht');
 
@@ -11,11 +11,14 @@ function itc_featured_product_sht()
   $productId = get_field('featured_home_product', 'option');
   $product = wc_get_product($productId->ID);
   $productUrl = get_permalink($productId->ID);
+  $productGalleryIds = $product->get_gallery_image_ids();
+  $productGalleryFirst = $productGalleryIds[0];
+  $productGalleryFirstUrl = wp_get_attachment_url($productGalleryFirst);
   $cat_id = get_cat_ID($product->get_categories());
   $cat_url = get_category_link($cat_id);
 ?>
 
-  <div class="featured-product flex items-center gap-28">
+  <div class="featured-product flex flex-col md:flex-row items-center lg:gap-8 xl:gap-28">
     <div class="featured-product__image -mt-14 mr-14 mb-14">
       <a href="<?php echo $productUrl; ?>">
         <?php echo $product->get_image('home-featured-product'); ?>

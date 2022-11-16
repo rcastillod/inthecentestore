@@ -14,19 +14,26 @@
 
 // Social Media
 .social-list {
-  @apply ml-auto;
 
   ul {
     @apply flex gap-3;
 
     li {
-      @apply rounded-full h-8 w-8 bg-secondary;
+      @apply rounded-full h-9 w-9 bg-secondary;
+
+      &:hover {
+        @apply bg-primary;
+      }
 
       >a {
         @apply h-full w-full flex items-center justify-center rounded-full;
 
         &:hover {
           @apply text-white
+        }
+
+        i {
+          @apply text-lg;
         }
       }
     }

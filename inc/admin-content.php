@@ -34,4 +34,10 @@ if (function_exists('acf_add_options_page')) {
     'menu_title' => 'Home Contenido',
     'parent_slug' => 'ajustes',
   ));
+  // 04.- Redes Sociales
+  acf_add_options_sub_page(array(
+    'page_title' => 'Redes Sociales',
+    'menu_title' => 'Redes Sociales',
+    'parent_slug' => 'ajustes',
+  ));
 }
