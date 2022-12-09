@@ -82,6 +82,19 @@
   }
 }
 
+// Woocommerce
+
+// notice messages
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  border: none
+}
+
+// Cart steps
+#ast-checkout-wrap a .ast-step-number {
+  font-size: 1em;
+}
 
 
 // Contact form

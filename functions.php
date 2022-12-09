@@ -20,6 +20,7 @@ $file_includes = array(
 	'/admin-content.php',
 	'/home-slider.php',
 	'/featured-home-product.php',
+	'/woocommerce.php',
 );
 
 foreach ($file_includes as $file) {

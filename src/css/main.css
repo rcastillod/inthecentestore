@@ -60,6 +60,16 @@
   }
 }
 
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  border: none;
+}
+
+#ast-checkout-wrap a .ast-step-number {
+  font-size: 1em;
+}
+
 .wpcf7-form input[type=text],
 .wpcf7-form input[type=tel],
 .wpcf7-form input[type=email] {
