@@ -60,12 +60,31 @@
   }
 }
 
+/* Single */
+.summary .cart {
+  margin-block-start: 3rem;
+}
+.summary .cart .quantity.hidden {
+  display: none;
+}
+
+.product_description {
+  margin-block-start: 2rem;
+}
+
+@media (min-width: 922px) {
+  .related.products {
+    margin-block-start: 3rem;
+  }
+}
+/* Checkout - notice messages */
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
   border: none;
 }
 
+/* Checkout - Cart steps */
 #ast-checkout-wrap a .ast-step-number {
   font-size: 1em;
 }

@@ -64,3 +64,12 @@ function itc_one_error($fields, $errors)
     $errors->add('validation', 'Por favor ingresa todos los campos requeridos!');
   }
 }
+
+add_action('woocommerce_before_add_to_cart_form', 'ta_the_content');
+
+function ta_the_content()
+{
+  echo '<div class="product_description">';
+  echo the_content();
+  echo '</div>';
+}

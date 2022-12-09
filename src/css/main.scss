@@ -84,14 +84,33 @@
 
 // Woocommerce
 
-// notice messages
+/* Single */
+.summary .cart {
+  margin-block-start: 3rem;
+
+  .quantity.hidden {
+    display: none;
+  }
+}
+
+.product_description {
+  margin-block-start: 2rem;
+}
+
+@media (min-width: 922px) {
+  .related.products {
+    margin-block-start: 3rem;
+  }
+}
+
+/* Checkout - notice messages */
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
   border: none
 }
 
-// Cart steps
+/* Checkout - Cart steps */
 #ast-checkout-wrap a .ast-step-number {
   font-size: 1em;
 }
