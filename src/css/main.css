@@ -89,6 +89,11 @@
   font-size: 1em;
 }
 
+/* My account */
+.woocommerce-MyAccount-content .woocommerce-message > .woocommerce-Button {
+  display: none;
+}
+
 .wpcf7-form input[type=text],
 .wpcf7-form input[type=tel],
 .wpcf7-form input[type=email] {

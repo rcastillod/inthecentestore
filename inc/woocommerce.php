@@ -75,13 +75,59 @@ function ta_the_content()
 }
 
 /**
+ * Redirect to edit account
+ */
+add_action('template_redirect', 'itc_my_account_redirect_to_account_data');
+
+function itc_my_account_redirect_to_account_data()
+{
+  if (is_account_page() && empty(WC()->query->get_current_endpoint())) {
+    wp_safe_redirect(wc_get_account_endpoint_url('edit-account'));
+    exit;
+  }
+}
+
+/**
  * Remove my account tabs
  */
 add_filter('woocommerce_account_menu_items', 'itc_remove_my_account_tabs');
 function itc_remove_my_account_tabs($menu_links)
 {
 
+  unset($menu_links['dashboard']); // Disable Dashboard
   unset($menu_links['downloads']); // Disable Downloads
 
   return $menu_links;
+}
+
+/**
+ * Rename my account tabs
+ */
+
+add_filter('woocommerce_account_menu_items', 'itc_rename_my_account_tabs');
+
+function itc_rename_my_account_tabs($menu_links)
+{
+
+  $menu_links['edit-account'] = 'Datos personales';
+  $menu_links['orders'] = 'Mis compras';
+
+  return $menu_links;
+}
+
+/**
+ * Reorder my account tabs
+ */
+
+add_filter('woocommerce_account_menu_items', 'itc_my_account_menu_links_reorder');
+
+function itc_my_account_menu_links_reorder($menu_links)
+{
+
+  return array(
+    'edit-account' => __('Account details', 'woocommerce'),
+    'orders' => __('Orders', 'woocommerce'),
+    'edit-address' => __('Addresses', 'woocommerce'),
+    'customer-logout' => __('Logout', 'woocommerce')
+  );
 }

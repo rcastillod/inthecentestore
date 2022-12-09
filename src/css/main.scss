@@ -115,6 +115,11 @@
   font-size: 1em;
 }
 
+/* My account */
+.woocommerce-MyAccount-content .woocommerce-message>.woocommerce-Button {
+  display: none;
+}
+
 
 // Contact form
 .wpcf7-form {
