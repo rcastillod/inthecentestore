@@ -11,9 +11,6 @@ function itc_featured_product_sht()
   $productId = get_field('featured_home_product', 'option');
   $product = wc_get_product($productId->ID);
   $productUrl = get_permalink($productId->ID);
-  $productGalleryIds = $product->get_gallery_image_ids();
-  $productGalleryFirst = $productGalleryIds[0];
-  $productGalleryFirstUrl = wp_get_attachment_url($productGalleryFirst);
   $cat_id = get_cat_ID($product->get_categories());
   $cat_url = get_category_link($cat_id);
 ?>
