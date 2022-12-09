@@ -73,3 +73,15 @@ function ta_the_content()
   echo the_content();
   echo '</div>';
 }
+
+/**
+ * Remove my account tabs
+ */
+add_filter('woocommerce_account_menu_items', 'itc_remove_my_account_tabs');
+function itc_remove_my_account_tabs($menu_links)
+{
+
+  unset($menu_links['downloads']); // Disable Downloads
+
+  return $menu_links;
+}
