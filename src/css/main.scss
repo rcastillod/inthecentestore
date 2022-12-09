@@ -7,6 +7,11 @@
 /*                                   HEADER                                   */
 /* -------------------------------------------------------------------------- */
 
+// Menu
+.ast-desktop .ast-menu-hover-style-underline>.menu-item:has(.sub-menu) .menu-link:before {
+  opacity: 0
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENTS                                */
