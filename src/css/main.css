@@ -99,6 +99,17 @@
   width: 47%;
 }
 
+.contact-wrapper {
+  @apply bg-secondary;
+}
+@media (min-width: 768px) {
+  .contact-wrapper {
+    background-color: transparent;
+    background-image: linear-gradient(90deg, var(--e-global-color-astglobalcolor4) 55%, var(--e-global-color-astglobalcolor5) 55%);
+  }
+}
+
+/* Contact form */
 .contact_form input,
 .contact_form textarea {
   background-color: transparent;
