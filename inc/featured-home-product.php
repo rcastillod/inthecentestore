@@ -25,7 +25,7 @@ function itc_featured_product_sht()
       <h6 class="featured-product__category"><a href="<?php echo $cat_url; ?>"><?php echo $product->get_categories(); ?></a></h6>
       <h2 class="featured-product__title"><?php echo $product->get_name(); ?></h2>
       <div class="featured-product__description mb-10">
-        <?php echo $product->get_short_description(); ?>
+        <?php echo $product->get_description(); ?>
       </div>
       <div class="elementor-button-wrapper">
         <a href="<?php echo $productUrl; ?>" class="elementor-button-link elementor-button elementor-size-sm">Ver Más</a>
