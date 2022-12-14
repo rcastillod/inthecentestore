@@ -126,23 +126,28 @@
 }
 
 // Contact form
-.wpcf7-form {
+.contact_form {
 
-  input[type="text"],
-  input[type="tel"],
-  input[type="email"] {
-    @apply rounded-lg
+  input,
+  textarea {
+    background-color: transparent;
+    border-radius: 0;
   }
 
-  // Error message alert
-  .wpcf7-not-valid-tip {
-    @apply text-sm text-primary font-medium
+  textarea {
+    padding: 0.75em;
+    resize: none;
   }
 
-  .wpcf7-response-output {
-    @apply m-0 text-sm text-white rounded-lg;
-    border: none !important;
-    margin: 0 !important;
-    padding-block: .3125rem;
+  .wpforms-submit {
+    @apply bg-primary text-white;
+    font-weight: 700;
+    padding: .9375em 1.5625em;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      @apply bg-dark-grey;
+    }
   }
 }
