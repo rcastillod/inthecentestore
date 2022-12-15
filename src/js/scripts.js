@@ -1,5 +1,6 @@
 /* ------------------------------- Hero SLider ------------------------------ */
 let swiper = new Swiper("#heroSlider", {
+  lazy: true,
   loop: true,
   pagination: {
     el: ".swiper-pagination",
