@@ -95,6 +95,10 @@
 }
 
 /* Single */
+.tns-nav > button:not(.tns-nav-active) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .summary .cart {
   margin-block-start: 3rem;
 }

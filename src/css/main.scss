@@ -133,6 +133,10 @@
 // Woocommerce
 
 /* Single */
+.tns-nav>button:not(.tns-nav-active) {
+  background-color: rgb(0 0 0 / 30%);
+}
+
 .summary .cart {
   margin-block-start: 3rem;
 
