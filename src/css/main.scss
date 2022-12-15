@@ -82,9 +82,10 @@
 
 // Featured Product
 .featured-product {
-  background-image: linear-gradient(90deg, var(--ast-global-color-4) 80%, var(--ast-global-color-5) 80%);
+  @apply bg-secondary;
 
   @media (min-width: 768px) {
+    background-color: transparent;
     background-image: linear-gradient(90deg, var(--ast-global-color-4) 58%, var(--ast-global-color-5) 58%);
   }
 }

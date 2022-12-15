@@ -15,7 +15,7 @@ function itc_featured_product_sht()
   $cat_url = get_category_link($cat_id);
 ?>
 
-  <div class="featured-product flex flex-col md:flex-row md:items-center lg:gap-8 xl:gap-20 pl-10 md:pl-0">
+  <div class="featured-product flex flex-col md:flex-row md:items-center lg:gap-8 xl:gap-20 pb-12 md:pb-0 pl-10 md:pl-0">
     <div class="featured-product__image -mt-14 mr-14 mb-14">
       <a href="<?php echo $productUrl; ?>">
         <?php echo $product->get_image('home-featured-product'); ?>
