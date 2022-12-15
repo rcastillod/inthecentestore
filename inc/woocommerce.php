@@ -75,6 +75,17 @@ function ta_the_content()
 }
 
 /**
+ * Redirect to home after login
+ */
+add_filter('woocommerce_login_redirect', 'itc_login_redirect_to_homepage');
+
+function itc_login_redirect_to_homepage($redirect_to)
+{
+
+  return home_url();
+}
+
+/**
  * Redirect to edit account
  */
 add_action('template_redirect', 'itc_my_account_redirect_to_account_data');

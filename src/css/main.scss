@@ -12,6 +12,13 @@
   opacity: 0
 }
 
+@media (max-width: 767px) {
+  .ast-header-account-link.ast-header-account-type-avatar::after {
+    content: 'Mi cuenta';
+    margin-inline-start: .625rem;
+  }
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENTS                                */
