@@ -14,6 +14,33 @@
     margin-inline-start: 0.625rem;
   }
 }
+/* Mobile menu */
+#ast-hf-mobile-menu li a[href="#"] + button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#ast-hf-mobile-menu li a[href="#"] + button .ast-icon {
+  position: absolute;
+  top: 23px;
+}
+#ast-hf-mobile-menu li a[href="#"] + button .ast-icon svg {
+  margin: 0;
+}
+#ast-hf-mobile-menu li.ast-submenu-expanded .ast-icon {
+  transform: rotate(180deg);
+}
+#ast-hf-mobile-menu li .sub-menu .menu-link {
+  padding-inline-start: 3.125rem;
+}
+#ast-hf-mobile-menu li .sub-menu .ast-icon.icon-arrow {
+  display: none;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENTS                                */
 /* -------------------------------------------------------------------------- */

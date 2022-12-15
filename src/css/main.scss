@@ -19,6 +19,46 @@
   }
 }
 
+/* Mobile menu */
+#ast-hf-mobile-menu li {
+
+  a[href='#']+button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    .ast-icon {
+      position: absolute;
+      top: 23px;
+
+      svg {
+        margin: 0;
+      }
+    }
+  }
+
+  &.ast-submenu-expanded .ast-icon {
+    transform: rotate(180deg);
+  }
+
+  .sub-menu {
+
+    .menu-link {
+      padding-inline-start: 3.125rem;
+    }
+
+    .ast-icon.icon-arrow {
+      display: none;
+    }
+
+  }
+
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                                  COMPONENTS                                */
