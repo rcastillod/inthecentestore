@@ -183,3 +183,15 @@
     }
   }
 }
+
+// Footer
+.footer-menu .elementor-nav-menu {
+  @media (max-width: 767px) {
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+
+}

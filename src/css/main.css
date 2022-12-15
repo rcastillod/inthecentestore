@@ -145,3 +145,14 @@
 .contact_form .wpforms-submit:hover, .contact_form .wpforms-submit:focus {
   @apply bg-dark-grey;
 }
+
+@media (max-width: 767px) {
+  .footer-menu .elementor-nav-menu {
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 576px) {
+  .footer-menu .elementor-nav-menu {
+    flex-direction: column;
+  }
+}
