@@ -100,6 +100,17 @@
   display: none;
 }
 
+@media (max-width: 921px) {
+  .woocommerce-MyAccount-navigation ul {
+    gap: 20px;
+  }
+  .woocommerce-MyAccount-navigation ul li {
+    @apply bg-secondary;
+  }
+  .woocommerce-MyAccount-navigation ul li a {
+    padding-left: 0.625rem;
+  }
+}
 /* Register Form */
 .woocommerce form.woocommerce-form-register .form-row-first {
   width: 47%;
