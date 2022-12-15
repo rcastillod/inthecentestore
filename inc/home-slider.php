@@ -22,19 +22,22 @@ function itc_heroslider_sht()
 
               // Data Slider
               $bgImage = get_sub_field('imagen', 'option');
+              $bgImageMobile = get_sub_field('imagen_movil', 'option');
               $link     = get_sub_field('link', 'option');
         ?>
 
               <?php
               if (get_row_layout() == 'banner_link') { ?>
                 <a href="<?php echo $link; ?>" class="swiper-slide hero-slide">
-                  <img src="<?php echo $bgImage; ?>" alt="">
+                  <img class="hidden md:block" src="<?php echo $bgImage; ?>">
+                  <img class="block md:hidden" src="<?php echo $bgImageMobile; ?>">
                 </a>
               <?php
               } elseif (get_row_layout() == 'banner_titulo_boton') { ?>
                 <?php $title = get_sub_field('titulo', 'option'); ?>
                 <div class="swiper-slide hero-slide flex items-center">
-                  <img src="<?php echo $bgImage; ?>" alt="">
+                  <img class="hidden md:block" src="<?php echo $bgImage; ?>">
+                  <img class="block md:hidden" src="<?php echo $bgImageMobile; ?>">
                   <div class="hero-slide__content absolute">
                     <h2 class="hero-slide__title"><?php echo $title; ?></h2>
                     <div class="hero-slide__links elementor-button-wrapper">
