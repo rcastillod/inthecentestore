@@ -1,6 +1,16 @@
 /* -------------------------------------------------------------------------- */
 /*                                   GLOBAL                                   */
 /* -------------------------------------------------------------------------- */
+.contact_form .wpforms-submit, .ast-orders-table__cell .view {
+  @apply bg-primary text-white;
+  font-weight: 700;
+  padding: 0.9375em 1.5625em;
+  width: 100%;
+}
+.contact_form .wpforms-submit:hover, .ast-orders-table__cell .view:hover, .contact_form .wpforms-submit:focus, .ast-orders-table__cell .view:focus {
+  @apply bg-dark-grey;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   HEADER                                   */
 /* -------------------------------------------------------------------------- */
@@ -94,6 +104,11 @@
   }
 }
 
+/* Catalog */
+.woocommerce ul.products li.product a img {
+  max-width: 450px;
+}
+
 /* Single */
 .tns-nav > button:not(.tns-nav-active) {
   background-color: rgba(0, 0, 0, 0.3);
@@ -127,6 +142,10 @@
   font-size: 1em;
 }
 
+#billing_country_field {
+  display: none !important;
+}
+
 /* My account */
 .woocommerce-MyAccount-content .woocommerce-message > .woocommerce-Button {
   display: none;
@@ -143,6 +162,18 @@
     padding-left: 0.625rem;
   }
 }
+@media (max-width: 767px) {
+  .ast-orders-table__cell .view {
+    margin-block-end: 1.25rem;
+  }
+}
+
+.woo-orders-tracking-orders-details {
+  flex-direction: column;
+  background-color: rgba(0, 128, 0, 0.1411764706);
+  padding: 10px;
+}
+
 /* Register Form */
 .woocommerce form.woocommerce-form-register .form-row-first {
   width: 47%;
@@ -168,16 +199,6 @@
   padding: 0.75em;
   resize: none;
 }
-.contact_form .wpforms-submit {
-  @apply bg-primary text-white;
-  font-weight: 700;
-  padding: 0.9375em 1.5625em;
-  width: 100%;
-}
-.contact_form .wpforms-submit:hover, .contact_form .wpforms-submit:focus {
-  @apply bg-dark-grey;
-}
-
 @media (max-width: 767px) {
   .footer-menu .elementor-nav-menu {
     gap: 1.25rem;
