@@ -209,3 +209,33 @@
     flex-direction: column;
   }
 }
+
+/* Whatsapp Link */
+.footer-wrapper {
+  position: relative;
+}
+
+.whatsapp-link {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: #4caf51;
+  padding: 0.7em 1.5em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+@media (min-width: 768px) {
+  .whatsapp-link {
+    right: 40px;
+  }
+}
+.whatsapp-link img {
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25));
+}
+.whatsapp-link span {
+  color: white;
+}
