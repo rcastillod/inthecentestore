@@ -145,6 +145,43 @@
 
 // Woocommerce
 
+/* Card categories */
+.grid-card-cat>.elementor-widget-wrap {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @media (min-width: 660px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.card-cat .elementor-image-box-content {
+  background-color: rgb(255 255 255 / 80%);
+  padding-block: .9375rem;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+
+  .elementor-image-box-title {
+    font-size: 1.25rem;
+    margin: 0;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      font-size: 1.325rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
 /* Catalog */
 .woocommerce ul.products li.product a img {
   max-width: 450px;
