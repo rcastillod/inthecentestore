@@ -21,11 +21,11 @@ function flatPreloaderInit() {
   const showPreloaderInstantly = true
 
   // Fix error loading screen does not disappear when clicking on back button
-  // window.onpageshow = function (event) {
-  //   if (event.persisted) {
-  //     window.location.reload()
-  //   }
-  // };
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload()
+    }
+  };
 
   window.addEventListener('load', async function () {
 
