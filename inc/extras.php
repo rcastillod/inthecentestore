@@ -60,3 +60,27 @@ function wpf_dev_frontend_output_success($form_data, $fields, $entry_id)
 }
 
 add_action('wpforms_frontend_output_success', 'wpf_dev_frontend_output_success', 10, 3);
+
+/**
+ * Preloader
+ */
+
+// Add preloader class to body
+function itc_preloader_body_classes($classes)
+{
+  $classes[] = 'flat-preloader-active';
+  return $classes;
+}
+add_filter('body_class', 'itc_preloader_body_classes');
+
+// Append preloader to head
+function flat_preloader_output()
+{
+?>
+  <div id="flat-preloader-overlay">
+    <img src="<?php echo get_stylesheet_directory_uri() ?>/dist/img/itc-loader.gif" alt="Preloader icon">
+  </div>
+<?php
+}
+
+add_action('wp_head', 'flat_preloader_output', 1000);
