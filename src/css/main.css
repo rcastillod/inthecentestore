@@ -228,6 +228,16 @@
   width: 47%;
 }
 
+/* Forgot password form */
+.woocommerce-ResetPassword {
+  display: flex;
+  flex-direction: column;
+}
+.woocommerce-ResetPassword .woocommerce-form-row--last,
+.woocommerce-ResetPassword .woocommerce-Button {
+  width: 100% !important;
+}
+
 .contact-wrapper {
   @apply bg-secondary;
 }

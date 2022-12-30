@@ -278,6 +278,17 @@
   width: 47%;
 }
 
+/* Forgot password form */
+.woocommerce-ResetPassword {
+  display: flex;
+  flex-direction: column;
+
+  .woocommerce-form-row--last,
+  .woocommerce-Button {
+    width: 100% !important;
+  }
+}
+
 // Contact
 
 .contact-wrapper {
