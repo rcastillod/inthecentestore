@@ -13,11 +13,11 @@ let swiper = new Swiper("#heroSlider", {
 });
 
 /* -------------------------------- Preloader ------------------------------- */
-flatPreloaderInit()
+itcPreloaderInit()
 
-function flatPreloaderInit() {
+function itcPreloaderInit() {
   const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout))
-  const overlayEl = document.getElementById('flat-preloader-overlay')
+  const overlayEl = document.getElementById('itc-preloader-overlay')
   const showPreloaderInstantly = true
 
   // Fix error loading screen does not disappear when clicking on back button
@@ -31,7 +31,7 @@ function flatPreloaderInit() {
 
     await sleep(1000)
 
-    document.body.classList.remove('flat-preloader-active')
+    document.body.classList.remove('itc-preloader-active')
     overlayEl.classList.add('hide')
 
     await sleep(300)
@@ -42,7 +42,7 @@ function flatPreloaderInit() {
         link.addEventListener('click', e => {
           let href = link.getAttribute('href')
           e.preventDefault()
-          document.body.classList.add('flat-preloader-active')
+          document.body.classList.add('itc-preloader-active')
           overlayEl.classList.remove('hide')
           window.location.href = href
         })

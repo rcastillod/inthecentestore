@@ -290,7 +290,7 @@
 }
 
 /* Preloader */
-#flat-preloader-overlay {
+#itc-preloader-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -308,24 +308,15 @@
   visibility: visible;
 }
 
-#flat-preloader-overlay.hide {
+#itc-preloader-overlay.hide {
   opacity: 0;
   visibility: hidden;
 }
 
-#flat-preloader-overlay img {
+#itc-preloader-overlay img {
   margin-bottom: 10px;
 }
 
-.fpo-default img {
-  width: 40px;
-  height: auto;
-}
-
-#flat-preloader-overlay small {
-  display: block;
-}
-
-.flat-preloader-active {
+.itc-preloader-active {
   overflow: hidden;
 }
