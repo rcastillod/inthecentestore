@@ -77,10 +77,12 @@ add_filter('body_class', 'itc_preloader_body_classes');
 function flat_preloader_output()
 {
 ?>
-  <div id="flat-preloader-overlay">
-    <img src="<?php echo get_stylesheet_directory_uri() ?>/dist/img/itc-loader.gif" alt="Preloader icon">
-  </div>
+  <?php if (!is_account_page()) : ?>
+    <div id="flat-preloader-overlay">
+      <img src="<?php echo get_stylesheet_directory_uri() ?>/dist/img/itc-loader.gif" alt="Preloader icon">
+    </div>
 <?php
+  endif;
 }
 
 add_action('wp_head', 'flat_preloader_output', 1000);
