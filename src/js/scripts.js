@@ -38,7 +38,7 @@ function itcPreloaderInit() {
 
     // Show the preloader immediately
     if (showPreloaderInstantly) {
-      document.querySelectorAll('a').forEach(link => {
+      document.querySelectorAll('a:not(.woocommerce-product-gallery__image > a)').forEach(link => {
         link.addEventListener('click', e => {
           let href = link.getAttribute('href')
           e.preventDefault()
