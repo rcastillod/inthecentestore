@@ -60,29 +60,3 @@ function wpf_dev_frontend_output_success($form_data, $fields, $entry_id)
 }
 
 add_action('wpforms_frontend_output_success', 'wpf_dev_frontend_output_success', 10, 3);
-
-/**
- * Preloader
- */
-
-// Add preloader class to body
-function itc_preloader_body_classes($classes)
-{
-  $classes[] = 'itc-preloader-active';
-  return $classes;
-}
-add_filter('body_class', 'itc_preloader_body_classes');
-
-// Append preloader to head
-function itc_preloader_output()
-{
-?>
-  <?php if (!is_account_page()) : ?>
-    <div id="itc-preloader-overlay">
-      <img src="<?php echo get_stylesheet_directory_uri() ?>/dist/img/itc-loader.gif" alt="Preloader icon">
-    </div>
-<?php
-  endif;
-}
-
-add_action('wp_head', 'itc_preloader_output', 1000);

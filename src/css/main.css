@@ -298,35 +298,3 @@
 .whatsapp-link span {
   color: white;
 }
-
-/* Preloader */
-#itc-preloader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999999999;
-  background: rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: all 0.2s ease-in;
-  opacity: 1;
-  visibility: visible;
-}
-
-#itc-preloader-overlay.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
-#itc-preloader-overlay img {
-  margin-bottom: 10px;
-}
-
-.itc-preloader-active {
-  overflow: hidden;
-}
