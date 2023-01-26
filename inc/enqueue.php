@@ -45,3 +45,16 @@ function child_enqueue_styles()
 }
 
 add_action('wp_enqueue_scripts', 'child_enqueue_styles', 15);
+
+
+/**
+ * Add facebook domain verification meta tag
+ */
+function custom_header_metadata()
+{
+?>
+  <meta name="facebook-domain-verification" content="d3h85pnvau3luzacgqlqg6pkmb5c8j" />
+<?php
+
+}
+add_action('wp_head', 'custom_header_metadata');
