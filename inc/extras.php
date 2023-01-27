@@ -71,7 +71,9 @@ function wpf_dev_frontend_output_success($form_data, $fields, $entry_id)
 add_action('wpforms_frontend_output_success', 'wpf_dev_frontend_output_success', 10, 3);
 
 
-/* Add filtering by featured products */
+/**
+ *  Add filtering by featured products 
+ */
 add_action('restrict_manage_posts', 'featured_products_sorting');
 function featured_products_sorting()
 {
@@ -104,3 +106,16 @@ function featured_products_sorting_query($query)
     $q_vars[$taxonomy] = $term->slug;
   }
 }
+
+/**
+ * Remove Yoast SEO Filters
+ */
+function custom_remove_yoast_seo_admin_filters()
+{
+  global $wpseo_meta_columns;
+  if ($wpseo_meta_columns) {
+    remove_action('restrict_manage_posts', array($wpseo_meta_columns, 'posts_filter_dropdown'));
+    remove_action('restrict_manage_posts', array($wpseo_meta_columns, 'posts_filter_dropdown_readability'));
+  }
+}
+add_action('admin_init', 'custom_remove_yoast_seo_admin_filters', 20);
