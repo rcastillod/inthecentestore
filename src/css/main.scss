@@ -32,6 +32,14 @@
   }
 }
 
+/* Brands menu */
+@media (min-width: 576px) {
+  .brands .sub-menu {
+    columns: 3;
+    width: auto;
+  }
+}
+
 /* Mobile menu */
 #ast-hf-mobile-menu li {
 
