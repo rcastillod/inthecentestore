@@ -223,3 +223,62 @@ function itc_save_register_fields_phone($customer_id)
     update_user_meta($customer_id, 'phone_number', wc_clean($_POST['phone_number']));
   }
 }
+
+
+/**
+ * Init plugin
+ **/
+add_action('init', 'smdfw_init', 100);
+function smdfw_init()
+{
+
+  // Add shipping methods filters
+  $shipping_methods = WC()->shipping->get_shipping_methods();
+  foreach ($shipping_methods as $id => $shipping_method) {
+    add_filter("woocommerce_shipping_instance_form_fields_$id", 'smdfw_add_form_fields');
+  }
+}
+
+/**
+ * Add description field to shipping method form
+ */
+function smdfw_add_form_fields($fields)
+{
+  // Create description field
+  $new_fields = array(
+    'description' => array(
+      'title'   => __('Description', 'smdfw'),
+      'type'    => 'textarea',
+      'default' => null,
+    ),
+  );
+  // Insert it after title field
+  $keys  = array_keys($fields);
+  $index = array_search('title', $keys, true);
+  $pos   = false === $index ? count($fields) : $index + 1;
+  return array_merge(array_slice($fields, 0, $pos), $new_fields, array_slice($fields, $pos));
+}
+
+/**
+ * Load description as metadata
+ */
+add_filter('woocommerce_shipping_method_add_rate_args', 'smdfw_add_rate_description_arg', 10, 2);
+function smdfw_add_rate_description_arg($args, $method)
+{
+  $args['meta_data']['description'] = htmlentities($method->get_option('description'));
+  return $args;
+}
+
+/**
+ * Display description field after method label
+ */
+add_action('woocommerce_after_shipping_rate', 'smdfw_output_shipping_rate_description', 10);
+function smdfw_output_shipping_rate_description($method)
+{
+  $meta_data = $method->get_meta_data();
+  if (array_key_exists('description', $meta_data)) {
+    $description = apply_filters('smdfw_description_output', html_entity_decode($meta_data['description']), $method);
+    $html        = '<div class="shipping_method_description"><small class="smdfw">' . wp_kses($description, wp_kses_allowed_html('post')) . '</small></div>';
+    echo apply_filters('smdfw_description_output_html', $html, $description, $method);
+  }
+}
