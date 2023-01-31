@@ -202,6 +202,12 @@
   display: none !important;
 }
 
+/* Hide address 2 checkout field */
+.woocommerce form #billing_address_2_field,
+.woocommerce-page form #billing_address_2_field {
+  display: none !important;
+}
+
 /* My account */
 .woocommerce-MyAccount-content .woocommerce-message > .woocommerce-Button {
   display: none;

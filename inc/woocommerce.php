@@ -228,26 +228,26 @@ function itc_save_register_fields_phone($customer_id)
 /**
  * Init plugin
  **/
-add_action('init', 'smdfw_init', 100);
-function smdfw_init()
+add_action('init', 'itc_init', 100);
+function itc_init()
 {
 
   // Add shipping methods filters
   $shipping_methods = WC()->shipping->get_shipping_methods();
   foreach ($shipping_methods as $id => $shipping_method) {
-    add_filter("woocommerce_shipping_instance_form_fields_$id", 'smdfw_add_form_fields');
+    add_filter("woocommerce_shipping_instance_form_fields_$id", 'itc_add_form_fields');
   }
 }
 
 /**
  * Add description field to shipping method form
  */
-function smdfw_add_form_fields($fields)
+function itc_add_form_fields($fields)
 {
   // Create description field
   $new_fields = array(
     'description' => array(
-      'title'   => __('Description', 'smdfw'),
+      'title'   => __('Description', 'itc'),
       'type'    => 'textarea',
       'default' => null,
     ),
@@ -262,8 +262,8 @@ function smdfw_add_form_fields($fields)
 /**
  * Load description as metadata
  */
-add_filter('woocommerce_shipping_method_add_rate_args', 'smdfw_add_rate_description_arg', 10, 2);
-function smdfw_add_rate_description_arg($args, $method)
+add_filter('woocommerce_shipping_method_add_rate_args', 'itc_add_rate_description_arg', 10, 2);
+function itc_add_rate_description_arg($args, $method)
 {
   $args['meta_data']['description'] = htmlentities($method->get_option('description'));
   return $args;
@@ -272,13 +272,13 @@ function smdfw_add_rate_description_arg($args, $method)
 /**
  * Display description field after method label
  */
-add_action('woocommerce_after_shipping_rate', 'smdfw_output_shipping_rate_description', 10);
-function smdfw_output_shipping_rate_description($method)
+add_action('woocommerce_after_shipping_rate', 'itc_output_shipping_rate_description', 10);
+function itc_output_shipping_rate_description($method)
 {
   $meta_data = $method->get_meta_data();
   if (array_key_exists('description', $meta_data)) {
-    $description = apply_filters('smdfw_description_output', html_entity_decode($meta_data['description']), $method);
-    $html        = '<div class="shipping_method_description"><small class="smdfw">' . wp_kses($description, wp_kses_allowed_html('post')) . '</small></div>';
-    echo apply_filters('smdfw_description_output_html', $html, $description, $method);
+    $description = apply_filters('itc_description_output', html_entity_decode($meta_data['description']), $method);
+    $html        = '<div class="shipping_method_description"><small class="itc">' . wp_kses($description, wp_kses_allowed_html('post')) . '</small></div>';
+    echo apply_filters('itc_description_output_html', $html, $description, $method);
   }
 }
