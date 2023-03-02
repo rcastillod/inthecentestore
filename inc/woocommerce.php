@@ -282,3 +282,71 @@ function itc_output_shipping_rate_description($method)
     echo apply_filters('itc_description_output_html', $html, $description, $method);
   }
 }
+
+/**
+ * Add new custom checkout fields
+ */
+
+function add_checkout_field($fields)
+{
+  $fields['billing']['billing_rut'] = array(
+    'type' => 'text',
+    'label' => __('RUT', 'woocommerce'),
+    'required' => true,
+    'class' => array('form-row-wide'),
+    'priority' => 30,
+  );
+  return $fields;
+}
+add_filter('woocommerce_checkout_fields', 'add_checkout_field');
+
+// save fields to order meta
+add_action('woocommerce_checkout_update_order_meta', 'itc_save_custom_fields');
+function itc_save_custom_fields($order_id)
+{
+  if (!empty($_POST['billing_rut']))
+    update_post_meta($order_id, 'billing_rut', sanitize_text_field($_POST['billing_rut']));
+}
+
+/**
+ * Validate new custom checkout fields
+ */
+add_action('woocommerce_checkout_process', 'itc_validate_custom_fields');
+
+function itc_validate_custom_fields()
+{
+  if (empty($_POST['billing_rut']))
+    wc_add_notice('El RUT es obligatorio.', 'error');
+}
+
+/**
+ * Send the billing_rut to order email
+ */
+add_filter('woocommerce_email_order_meta_fields', 'custom_woocommerce_email_order_meta_fields', 10, 3);
+
+function custom_woocommerce_email_order_meta_fields($fields, $sent_to_admin, $order)
+{
+  $fields['billing_rut'] = array(
+    'label' => __('RUT'),
+    'value' => get_post_meta($order->id, 'billing_rut', true),
+  );
+  return $fields;
+}
+
+/**
+ * Show rut field in order detail admin screen
+ */
+
+add_action('woocommerce_admin_order_data_after_billing_address', 'itc_custom_order_meta_rut_field');
+function itc_custom_order_meta_rut_field($order)
+{
+  /* Get rut field */
+  $rut = $order->get_meta('billing_rut');
+?>
+  <div class="rut">
+    <p>
+      <strong>RUT: </strong><?php echo $rut; ?></br>
+    </p>
+  </div>
+<?php
+}
