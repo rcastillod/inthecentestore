@@ -350,3 +350,24 @@ function itc_custom_order_meta_rut_field($order)
   </div>
 <?php
 }
+
+
+add_action('woocommerce_edit_account_form', 'add_rut_account_details', 10, 1);
+function add_rut_account_details()
+{
+  $user = wp_get_current_user();
+?>
+  <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+    <label for="billing_rut"><?php esc_html_e('RUT', 'itcstore'); ?></label>
+    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_rut" id="billing_rut" value="<?php echo esc_attr($user->billing_rut); ?>" />
+  </p>
+<?php
+}
+
+add_action('woocommerce_save_account_details', 'save_rut_account_details', 10, 1);
+function save_rut_account_details($user_id)
+{
+  if (isset($_POST['billing_rut'])) {
+    update_user_meta($user_id, 'billing_rut', sanitize_text_field($_POST['billing_rut']));
+  }
+}
