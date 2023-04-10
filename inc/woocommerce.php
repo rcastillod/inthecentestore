@@ -371,3 +371,18 @@ function save_rut_account_details($user_id)
     update_user_meta($user_id, 'billing_rut', sanitize_text_field($_POST['billing_rut']));
   }
 }
+
+// Hide out of stock product on loop
+add_filter('woocommerce_shortcode_products_query', function ($query_args, $atts, $loop) {
+
+  if ($atts['class'] == 'outofstock') {
+    $query_args['meta_query'] = array(array(
+      'key'     => '_stock_status',
+      'value'   => 'outofstock',
+      'compare' => 'NOT LIKE',
+    ));
+  }
+
+
+  return $query_args;
+}, 10, 3);
