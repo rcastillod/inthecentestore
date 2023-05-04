@@ -45,14 +45,15 @@ const formatRUT = (rutField) => {
 // Get the billing_rut field
 const rutField = document.getElementById('billing_rut');
 
-
-rutField.addEventListener('keyup', function () {
-  formatRUT(rutField);
-});
-rutField.addEventListener('focusout', function () {
-  if (!validateRUT(rutField.value) && !rutField.value == '') {
-    alert('El RUT no es valido');
-    rutField.value = ''
-    rutField.focus()
-  }
-});
+if (rutField) {
+  rutField.addEventListener('keyup', function () {
+    formatRUT(rutField);
+  });
+  rutField.addEventListener('focusout', function () {
+    if (!validateRUT(rutField.value) && !rutField.value == '') {
+      alert('El RUT no es valido');
+      rutField.value = ''
+      rutField.focus()
+    }
+  });
+}
