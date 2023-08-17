@@ -386,3 +386,28 @@ add_filter('woocommerce_shortcode_products_query', function ($query_args, $atts,
 
   return $query_args;
 }, 10, 3);
+
+
+/**
+ * Hide the "Shipping to.." text in cart
+ */
+add_filter('gettext', 'itc_translate_shippingto', 9999, 3);
+
+function itc_translate_shippingto($translated, $untranslated, $domain)
+{
+  if (!is_admin() && 'woocommerce' === $domain) {
+    switch ($translated) {
+      case 'Shipping to %s.':
+        $translated = '';
+        break;
+    }
+  }
+  return $translated;
+}
+
+add_action('woocommerce_before_cart', 'itc_hide_shippingto');
+
+function itc_hide_shippingto()
+{
+  echo '<style>.woocommerce-shipping-destination{display:none}</style>';
+}
