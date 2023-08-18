@@ -14,7 +14,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                   HEADER                                   */
 /* -------------------------------------------------------------------------- */
-@media (922px <= width <= 1421px) {
+@media (922px <= width <= 1460px) {
   .ast-builder-grid-row.ast-grid-center-col-layout {
     grid-template-columns: auto 1fr;
   }
